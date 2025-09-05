@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos de Futebol</title>
+    <link rel="stylesheet" href="css/eventos.css">
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div>
+            <h1>Eventos Disponíveis</h1>
+            <p class="subtitle">Jogos do Campeonato Brasileiro Série A 2025</p>
+        </div>
+        <div class="user-actions">
+            <a href="#" class="btn btn-secondary" onclick="meusIngressos()">Meus Ingressos</a>
+            <a href="#" class="btn">Minha Conta</a>
+        </div>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+    <div class="events-grid" id="eventsGrid">
+        <div class="loading">Carregando eventos...</div>
+    </div>
+</div>
+
+<!-- Modal de compra -->
+<div id="buyModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 class="modal-title">Comprar Ingresso</h2>
+        <form id="buyForm">
+            <input type="hidden" id="eventId">
+            <div class="form-group">
+                <label for="eventName">Evento:</label>
+                <input type="text" id="eventName" readonly>
+            </div>
+            <div class="form-group">
+                <label for="ticketQuantity">Quantidade de ingressos:</label>
+                <select id="ticketQuantity">
+                    <option value="1">1 Ingresso</option>
+                    <option value="2">2 Ingressos</option>
+                    <option value="3">3 Ingressos</option>
+                    <option value="4">4 Ingressos</option>
+                    <option value="5">5 Ingressos</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="totalPrice">Valor Total:</label>
+                <input type="text" id="totalPrice" readonly>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="cancel-btn" onclick="closeModal()">Cancelar</button>
+                <!-- Alterado para type="button" e chamar redirectToCheckout() -->
+                <button type="submit" class="btn">Finalizar Compra</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="js/eventos.js"></script>
+</body>
+</html>
