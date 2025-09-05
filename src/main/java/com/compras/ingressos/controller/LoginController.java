@@ -22,4 +22,9 @@ public class LoginController {
     public String compra() {
         return "compra";
     }
+
+    @GetMapping("/cadastro")
+    public String cadastro() {
+        return "cadastro";
+    }
 }
